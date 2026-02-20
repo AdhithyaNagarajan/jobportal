@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunt Pro - Find Your Dream Job</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-briefcase"></i>
+                <span>JobHunt<span class="logo-accent">Pro</span></span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#jobs" class="nav-link">Jobs</a>
+                <a href="#companies" class="nav-link">Companies</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="auth-buttons" id="authButtons">
+                    <button class="btn btn-outline" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="registerBtn">Register</button>
+                </div>
+                <div class="user-menu hidden" id="userMenu">
+                    <button class="user-avatar" id="userAvatar">
+                        <img src="https://ui-avatars.com/api/?name=User&background=0ea5e9&color=fff" alt="User">
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="user-info">
+                            <img src="https://ui-avatars.com/api/?name=User&background=0ea5e9&color=fff" alt="User">
+                            <div>
+                                <h4 id="userName">John Doe</h4>
+                                <span id="userEmail">john@example.com</span>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" id="dashboardLink">
+                            <i class="fas fa-th-large"></i> Dashboard
+                        </a>
+                        <a href="#" class="dropdown-item" id="myApplicationsLink">
+                            <i class="fas fa-paper-plane"></i> My Applications
+                        </a>
+                        <a href="#" class="dropdown-item" id="savedJobsLink">
+                            <i class="fas fa-bookmark"></i> Saved Jobs
+                        </a>
+                        <a href="#" class="dropdown-item" id="profileLink">
+                            <i class="fas fa-user"></i> Edit Profile
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item logout" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Find Your <span>Dream Job</span> Today</h1>
+                <p class="hero-subtitle">Discover thousands of job opportunities from top companies. Your career journey starts here.</p>
+                
+                <div class="search-box">
+                    <div class="search-input-group">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchKeyword" placeholder="Job title, keywords, or company">
+                    </div>
+                    <div class="search-input-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="searchLocation" placeholder="City, state, or country">
+                    </div>
+                    <div class="search-input-group">
+                        <i class="fas fa-briefcase"></i>
+                        <select id="searchCategory">
+                            <option value="">All Categories</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="design">Design</option>
+                            <option value="marketing">Marketing</option>
+                            <option value="sales">Sales</option>
+                            <option value="hr">Human Resources</option>
+                            <option value="finance">Finance</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="education">Education</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary btn-search" id="searchBtn">
+                        <i class="fas fa-search"></i> Search Jobs
+                    </button>
+                </div>
+                
+                <div class="hero-tags">
+                    <span>Popular:</span>
+                    <a href="#" class="tag" data-search="remote">Remote</a>
+                    <a href="#" class="tag" data-search="frontend">Frontend</a>
+                    <a href="#" class="tag" data-search="fullstack">Full Stack</a>
+                    <a href="#" class="tag" data-search="python">Python</a>
+                    <a href="#" class="tag" data-search="manager">Manager</a>
+                </div>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15000">0</div>
+                    <div class="stat-label">Jobs Available</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="5000">0</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="25000">0</div>
+                    <div class="stat-label">Candidates</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="12000">0</div>
+                    <div class="stat-label">Hired This Month</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Categories -->
+    <section class="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Browse by Category</h2>
+                <p>Explore jobs in your area of expertise</p>
+            </div>
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Categories will be loaded from JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="jobs-section" id="jobs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Jobs</h2>
+                <p>Hand-picked jobs from top companies</p>
+            </div>
+            
+            <div class="jobs-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar" id="filtersSidebar">
+                    <div class="filters-header">
+                        <h3><i class="fas fa-filter"></i> Filters</h3>
+                        <button class="btn btn-text" id="clearFilters">Clear All</button>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Job Type</h4>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="jobType" value="full-time">
+                            <span class="checkmark"></span>
+                            Full Time
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="jobType" value="part-time">
+                            <span class="checkmark"></span>
+                            Part Time
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="jobType" value="contract">
+                            <span class="checkmark"></span>
+                            Contract
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="jobType" value="internship">
+                            <span class="checkmark"></span>
+                            Internship
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="jobType" value="freelance">
+                            <span class="checkmark"></span>
+                            Freelance
+                        </label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Experience Level</h4>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="experience" value="entry">
+                            <span class="checkmark"></span>
+                            Entry Level
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="experience" value="mid">
+                            <span class="checkmark"></span>
+                            Mid Level
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="experience" value="senior">
+                            <span class="checkmark"></span>
+                            Senior Level
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="experience" value="lead">
+                            <span class="checkmark"></span>
+                            Lead / Manager
+                        </label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Salary Range</h4>
+                        <div class="salary-inputs">
+                            <input type="number" id="salaryMin" placeholder="Min" min="0">
+                            <span>to</span>
+                            <input type="number" id="salaryMax" placeholder="Max" min="0">
+                        </div>
+                        <input type="range" id="salaryRange" min="0" max="200000" step="5000" value="200000">
+                        <div class="salary-label">Up to $<span id="salaryValue">200,000</span></div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Location</h4>
+                        <select id="locationFilter" class="filter-select">
+                            <option value="">All Locations</option>
+                            <option value="New York">New York</option>
+                            <option value="San Francisco">San Francisco</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="Austin">Austin</option>
+                            <option value="Seattle">Seattle</option>
+                            <option value="Remote">Remote</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Date Posted</h4>
+                        <select id="dateFilter" class="filter-select">
+                            <option value="">Any Time</option>
+                            <option value="1">Last 24 Hours</option>
+                            <option value="7">Last 7 Days</option>
+                            <option value="30">Last 30 Days</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label class="toggle-label">
+                            <input type="checkbox" id="remoteFilter">
+                            <span class="toggle"></span>
+                            Remote Only
+                        </label>
+                    </div>
+                </aside>
+                
+                <!-- Jobs List -->
+                <div class="jobs-main">
+                    <div class="jobs-toolbar">
+                        <div class="results-count">
+                            <span id="resultsCount">0</span> Jobs Found
+                        </div>
+                        <div class="sort-wrapper">
+                            <label>Sort by:</label>
+                            <select id="sortSelect">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="salary-high">Salary: High to Low</option>
+                                <option value="salary-low">Salary: Low to High</option>
+                            </select>
+                        </div>
+                        <button class="filter-toggle" id="filterToggle">
+                            <i class="fas fa-filter"></i> Filters
+                        </button>
+                    </div>
+                    
+                    <div class="jobs-grid" id="jobsGrid">
+                        <!-- Jobs will be loaded from JS -->
+                    </div>
+                    
+                    <div class="load-more-wrapper" id="loadMoreWrapper">
+                        <button class="btn btn-outline btn-load" id="loadMoreBtn">
+                            <i class="fas fa-plus"></i> Load More Jobs
+                        </button>
+                    </div>
+                    
+                    <div class="no-results hidden" id="noResults">
+                        <i class="fas fa-search"></i>
+                        <h3>No jobs found</h3>
+                        <p>Try adjusting your filters or search criteria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Companies Section -->
+    <section class="companies-section" id="companies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Top Companies</h2>
+                <p>Join leading companies hiring on our platform</p>
+            </div>
+            <div class="companies-grid" id="companiesGrid">
+                <!-- Companies will be loaded from JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get started in three simple steps</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>Create Account</h3>
+                    <p>Sign up for free and create your professional profile in minutes.</p>
+                    <div class="step-number">01</div>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Search Jobs</h3>
+                    <p>Browse thousands of jobs and find the perfect match for your skills.</p>
+                    <div class="step-number">02</div>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3>Apply & Get Hired</h3>
+                    <p>Submit your application and land your dream job!</p>
+                    <div class="step-number">03</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Candidates Say</h2>
+                <p>Success stories from our community</p>
+            </div>
+            <div class="testimonials-wrapper">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Testimonials will be loaded from JS -->
+                </div>
+                <div class="testimonials-nav">
+                    <button class="testimonial-btn" id="prevTestimonial"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonials-dots" id="testimonialsDots"></div>
+                    <button class="testimonial-btn" id="nextTestimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Career?</h2>
+                <p>Join thousands of job seekers who found their dream jobs through JobHunt Pro.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-lg" id="ctaSearchJobs">
+                        <i class="fas fa-search"></i> Browse Jobs
+                    </button>
+                    <button class="btn btn-outline btn-lg" id="ctaPostJob">
+                        <i class="fas fa-briefcase"></i> Post a Job
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="fas fa-briefcase"></i>
+                        <span>JobHunt<span class="logo-accent">Pro</span></span>
+                    </a>
+                    <p>The easiest way to find your dream job. Connect with top companies and accelerate your career.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>For Candidates</h4>
+                    <a href="#">Browse Jobs</a>
+                    <a href="#">Candidate Dashboard</a>
+                    <a href="#">Job Alerts</a>
+                    <a href="#">My Applications</a>
+                    <a href="#">Profile Settings</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>For Employers</h4>
+                    <a href="#">Post a Job</a>
+                    <a href="#">Employer Dashboard</a>
+                    <a href="#">Manage Jobs</a>
+                    <a href="#">View Applications</a>
+                    <a href="#">Pricing Plans</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Career Advice</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Business Street, Suite 100<br>New York, NY 10001</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@jobhuntpro.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 JobHunt Pro. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="closeLoginModal">&times;</button>
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <p>Login to access your account</p>
+            </div>
+            <form class="modal-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="loginEmail" required placeholder="Enter your email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" required placeholder="Enter your password">
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span class="checkmark"></span>
+                        Remember me
+                    </label>
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <div class="modal-footer">
+                <p>Don't have an account? <a href="#" id="switchToRegister">Register now</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal" id="registerModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="closeRegisterModal">&times;</button>
+            <div class="modal-header">
+                <h2>Create Account</h2>
+                <p>Join JobHunt Pro today</p>
+            </div>
+            <form class="modal-form" id="registerForm">
+                <div class="form-group">
+                    <label for="registerName">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="registerName" required placeholder="Enter your name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="registerEmail" required placeholder="Enter your email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="registerPassword" required placeholder="Create a password" minlength="6">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Account Type</label>
+                    <div class="role-selector">
+                        <label class="role-option">
+                            <input type="radio" name="role" value="jobseeker" checked>
+                            <div class="role-card">
+                                <i class="fas fa-user"></i>
+                                <span>Job Seeker</span>
+                            </div>
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="employer">
+                            <div class="role-card">
+                                <i class="fas fa-building"></i>
+                                <span>Employer</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+            <div class="modal-footer">
+                <p>Already have an account? <a href="#" id="switchToLogin">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Job Details Modal -->
+    <div class="modal modal-lg" id="jobDetailsModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container modal-scroll">
+            <button class="modal-close" id="closeJobModal">&times;</button>
+            <div class="job-details-content" id="jobDetailsContent">
+                <!-- Job details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Apply Job Modal -->
+    <div class="modal" id="applyModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container">
+            <button class="modal-close" id="closeApplyModal">&times;</button>
+            <div class="modal-header">
+                <h2>Apply for Position</h2>
+                <p id="applyJobTitle">Complete your application</p>
+            </div>
+            <form class="modal-form" id="applyForm">
+                <input type="hidden" id="applyJobId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="applyName">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="applyName" required placeholder="Your full name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="applyEmail">Email</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="applyEmail" required placeholder="Your email">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="applyPhone">Phone Number</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="applyPhone" placeholder="Your phone number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="applyResume">Upload Resume</label>
+                    <div class="file-upload">
+                        <input type="file" id="applyResume" accept=".pdf,.doc,.docx">
+                        <label for="applyResume" class="file-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Choose file or drag here</span>
+                        </label>
+                    </div>
+                    <small>PDF, DOC, or DOCX (Max 5MB)</small>
+                </div>
+                <div class="form-group">
+                    <label for="applyCoverLetter">Cover Letter</label>
+                    <textarea id="applyCoverLetter" rows="4" placeholder="Tell us why you're a great fit..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Submit Application
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Post Job Modal -->
+    <div class="modal modal-lg" id="postJobModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container modal-scroll">
+            <button class="modal-close" id="closePostJobModal">&times;</button>
+            <div class="modal-header">
+                <h2>Post a New Job</h2>
+                <p>Fill in the details to publish your job listing</p>
+            </div>
+            <form class="modal-form" id="postJobForm">
+                <div class="form-group">
+                    <label for="postJobTitle">Job Title</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-briefcase"></i>
+                        <input type="text" id="postJobTitle" required placeholder="e.g. Senior Frontend Developer">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postJobCompany">Company Name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-building"></i>
+                            <input type="text" id="postJobCompany" required placeholder="Company name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postJobLocation">Location</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="postJobLocation" required placeholder="City, Country">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postJobType">Job Type</label>
+                        <select id="postJobType" required>
+                            <option value="">Select type</option>
+                            <option value="full-time">Full Time</option>
+                            <option value="part-time">Part Time</option>
+                            <option value="contract">Contract</option>
+                            <option value="internship">Internship</option>
+                            <option value="freelance">Freelance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postJobExperience">Experience Level</label>
+                        <select id="postJobExperience" required>
+                            <option value="">Select level</option>
+                            <option value="entry">Entry Level</option>
+                            <option value="mid">Mid Level</option>
+                            <option value="senior">Senior Level</option>
+                            <option value="lead">Lead / Manager</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="postJobSalaryMin">Salary Min ($)</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-dollar-sign"></i>
+                            <input type="number" id="postJobSalaryMin" placeholder="30000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postJobSalaryMax">Salary Max ($)</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-dollar-sign"></i>
+                            <input type="number" id="postJobSalaryMax" placeholder="80000">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="toggle-label">
+                        <input type="checkbox" id="postJobRemote">
+                        <span class="toggle"></span>
+                        This is a remote position
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="postJobDescription">Job Description</label>
+                    <textarea id="postJobDescription" rows="5" required placeholder="Describe the role and responsibilities..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="postJobRequirements">Requirements (one per line)</label>
+                    <textarea id="postJobRequirements" rows="4" placeholder="3+ years of experience&#10;Strong communication skills&#10;Bachelor's degree"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="postJobBenefits">Benefits (one per line)</label>
+                    <textarea id="postJobBenefits" rows="3" placeholder="Health insurance&#10;401(k) matching&#10;Flexible working hours"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-paper-plane"></i> Post Job
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div class="modal modal-lg" id="profileModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container modal-scroll">
+            <button class="modal-close" id="closeProfileModal">&times;</button>
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <p>Update your personal information</p>
+            </div>
+            <form class="modal-form" id="profileForm">
+                <div class="profile-header">
+                    <div class="profile-avatar-upload">
+                        <img src="https://ui-avatars.com/api/?name=User&background=0ea5e9&color=fff&size=120" id="profileAvatarPreview" alt="Profile">
+                        <button type="button" class="btn btn-outline btn-sm" id="changeAvatarBtn">
+                            <i class="fas fa-camera"></i> Change
+                        </button>
+                        <input type="file" id="profileAvatar" accept="image/*" hidden>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="profileName">Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="profileName" required placeholder="Your name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="profileTitle">Job Title</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-briefcase"></i>
+                            <input type="text" id="profileTitle" placeholder="e.g. Software Engineer">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profileBio">Bio</label>
+                    <textarea id="profileBio" rows="3" placeholder="Tell us about yourself..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="profileSkills">Skills (comma separated)</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-code"></i>
+                        <input type="text" id="profileSkills" placeholder="JavaScript, React, Node.js, Python">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="profileLocation">Location</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" id="profileLocation" placeholder="City, Country">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="profilePhone">Phone</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="profilePhone" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profileWebsite">Website / Portfolio</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-globe"></i>
+                        <input type="url" id="profileWebsite" placeholder="https://yourwebsite.com">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profileResume">Resume</label>
+                    <div class="file-upload">
+                        <input type="file" id="profileResume" accept=".pdf,.doc,.docx">
+                        <label for="profileResume" class="file-label">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <span>Upload your resume</span>
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-save"></i> Save Profile
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Modal -->
+    <div class="modal modal-lg" id="dashboardModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-container modal-scroll">
+            <button class="modal-close" id="closeDashboardModal">&times;</button>
+            <div class="dashboard">
+                <div class="dashboard-header">
+                    <h2>My Dashboard</h2>
+                    <p>Manage your job search activities</p>
+                </div>
+                <div class="dashboard-tabs">
+                    <button class="dashboard-tab active" data-tab="applied">Applied Jobs</button>
+                    <button class="dashboard-tab" data-tab="saved">Saved Jobs</button>
+                    <button class="dashboard-tab" data-tab="posted" id="postedJobsTab">Posted Jobs</button>
+                </div>
+                <div class="dashboard-content">
+                    <div class="dashboard-panel active" id="appliedPanel">
+                        <div class="dashboard-jobs" id="appliedJobsList">
+                            <!-- Applied jobs will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="dashboard-panel" id="savedPanel">
+                        <div class="dashboard-jobs" id="savedJobsList">
+                            <!-- Saved jobs will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="dashboard-panel" id="postedPanel">
+                        <div class="dashboard-actions">
+                            <button class="btn btn-primary" id="postNewJobBtn">
+                                <i class="fas fa-plus"></i> Post New Job
+                            </button>
+                        </div>
+                        <div class="dashboard-jobs" id="postedJobsList">
+                            <!-- Posted jobs will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/jobs.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
